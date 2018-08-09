@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
 import Scroll from '../components/Scroll';
-// import ErrorBoundry from '../components/ErrorBoundry';
+import ErrorBoundry from '../components/ErrorBoundry';
+import Header from '../components/Header';
 import './App.css';
 
 import { setSearchField, requestRobots } from '../actions'
-import Header from '../components/Header';
 
 const mapStateToProps = state => {
     return {
@@ -39,7 +39,7 @@ class App extends Component {
             return robot.name.toLowerCase().includes(searchField.toLowerCase());
         })
         return isPending ?
-            <h1>Loading ...</h1> :
+            <h1>Loading</h1> :
             (
                 <div className="tc">
                 <Header />
